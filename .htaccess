@@ -1,0 +1,11 @@
+#
+# Apache/PHP/Drupal settings:
+#
+
+#Docroot attempt to change: did not work DocumentRoot /home/username/public_html/web
+
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^techblah.co.uk$ [NC,OR]
+RewriteCond %{HTTP_HOST} ^www.techblah.co.uk$
+RewriteCond %{REQUEST_URI} !web/
+RewriteRule (.*) /web/$1 [L]
